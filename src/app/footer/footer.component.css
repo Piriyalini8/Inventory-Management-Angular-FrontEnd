@@ -1,0 +1,15 @@
+.sponsers{
+    background-color: rgba(0,0,0,0.8);
+    position: relative;
+    color: #fff;
+}
+.sponsers a{
+    text-decoration: none;
+    color:gray ;
+  }
+  .sponsers a:hover{
+    color: rgb(173, 173, 173);
+  }
+.rights{
+    padding: 10px 20px;
+  }

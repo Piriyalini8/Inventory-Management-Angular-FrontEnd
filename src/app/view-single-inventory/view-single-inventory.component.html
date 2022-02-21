@@ -1,0 +1,32 @@
+<div style="margin-top: 20px; margin-bottom: 20px; min-height: 535px;">
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-6 offset-md-3 offset-md-3">
+                <h2 class="text-center" style="margin-top: 20px;">View Inventory Detail</h2>
+                <div class="card-body">
+                    <form [formGroup]="inventoryItem">
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Inventory ID:</b> {{form.inventoryId}}</label>
+                        </div>
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Inventory Name:</b> {{form.inventoryName}}</label>
+                        </div>
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Description:</b> {{form.description}} </label>
+                        </div>
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Unit Price:</b> {{form.unitPrice}}</label>
+                        </div>
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Available Units:</b> {{form.availableUnits}}</label>
+                        </div>
+                        <div class="form-group custom">
+                            <label class="p-2"> <b>Reorder Level:</b> {{form.reOrderLevel}}</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-6 offset-md-3 offset-md-3">
+                <h2 class="text-center" style="margin-top: 20px;">Add Inventory</h2>
+                <div class="card-body">
+                    <form [formGroup]="inventoryItem" (ngSubmit)="onSubmit()">
+                        <div class="form-group custom">
+                            <label> Inventory Name: </label>
+                            <input type="text" formControlName="inventoryName" placeholder="Inventory Name"
+                                class="form-control" />
+                            <div
+                                *ngIf="inventoryItem.controls['inventoryName'].invalid && 
+                        (inventoryItem.controls['inventoryName'].dirty || inventoryItem.controls['inventoryName'].touched)">
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('inventoryName')?.errors?.['required']">Inventory Name is
+                                    Required</span>
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('inventoryName')?.errors?.['minlength']">Inventory Name must be
+                                    at
+                                    least 5 characters</span>
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('inventoryName')?.errors?.['maxlength']">Inventory Name can't
+                                    exceed 50 charactors</span>
+                            </div>
+                        </div>
+                        <div class="form-group custom">
+                            <label> Description: </label>
+                            <input type="text-area" formControlName="description" placeholder="Description"
+                                class="form-control" />
+                            <div
+                                *ngIf="inventoryItem.controls['description'].invalid && 
+                        (inventoryItem.controls['description'].dirty || inventoryItem.controls['description'].touched)">
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('description')?.errors?.['required']">Description is
+                                    Required</span>
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('description')?.errors?.['minlength']">Description must be
+                                    at least 10 characters</span>
+                            </div>
+                        </div>
+                        <div class="form-group custom">
+                            <label> Unit Price: </label>
+                            <input type="number" formControlName="unitPrice" placeholder="Unit Price" min="0" required 
+                                class="form-control" />
+                                <div
+                                *ngIf="inventoryItem.controls['unitPrice'].invalid && 
+                        (inventoryItem.controls['unitPrice'].dirty || inventoryItem.controls['unitPrice'].touched)">
+                                <span class="help-text text-danger"
+                                    *ngIf="inventoryItem.get('unitPrice')?.errors?.['required']">Unit Price is
+                                    Required</span>
+                                    </div>
+                        </div>
+                        <div class="form-group custom">
+                            <label> Available Units: </label>
+                            <input type="number" formControlName="availableUnits" placeholder="Available Units" min="0"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group custom">
+                            <label> Reorder Level: </label>
+                            <input type="number" formControlName="reOrderLevel" placeholder="Reorder Level" min="0"
+                                class="form-control" />
+                        </div>
+
+                        <button class="btn btn-success" type="submit" [disabled]="!inventoryItem.valid">Save</button>
+                        <button class="btn btn-danger" style="margin-left: 10px;" (click)="cancel()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
